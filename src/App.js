@@ -3,17 +3,17 @@ import './App.css';
 import MovieList from './component/MovieList';
 import Add from './component/Add';
 import Filter from './component/Filter';
-import { v4 } from 'uuid';
+import { uuid } from 'uuidv4';
 const App =()=> {
   const [keyword,setKeyword] = useState("")
   const [rate, setRate] = useState(1)
   const [movies, setMovies] = useState([
   
     {
-      id:v4(),
+      id:uuid (),
       title: '  The Nevers',
       year: 'Year: 2021',
-     
+      
       genre:' Genre: Action, Drama, Fantasy',
       poster: 'https://m.media-amazon.com/images/M/MV5BODEyOWY2ZDctOGI3Zi00YjYwLWIwZDEtMzJlY2VhYTA2N2ViXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX182_CR0,0,182,268_AL_.jpg',
       description: ' Description: An epic tale following a gang of Victorian women who find themselves with unusual abilities, relentless enemies, and a mission that might change the world.',
@@ -22,7 +22,7 @@ const App =()=> {
 
     },
     {
-      id:v4(),
+      id:uuid(),
       title: 'The Crown',
       year: 'Year: 2016',
      
@@ -33,7 +33,7 @@ const App =()=> {
       rating: '5'
 
     },
-    { id:v4(),
+    { id:uuid(),
       title: ' Innocent',
       year: 'Year: 2021',
       
@@ -44,7 +44,7 @@ const App =()=> {
       rating: '6'
 
     },
-    { id:v4(),
+    { id:uuid(),
       title: '  The Walking Dead',
       year: 'Year: 2010',
       

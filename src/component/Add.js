@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
 import { Button, Modal,Form } from "react-bootstrap";
-
+import { uuid } from 'uuidv4';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const Add = ({addMovie}) => {
     const [show, setShow] = useState(false);
   
     const handleClose = () => {
+        setId('')
         setPoster('')
         setTitle('')
         setYear('')
@@ -21,7 +22,7 @@ const Add = ({addMovie}) => {
   
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
- 
+  const [id, setId] = useState(uuid());
   const [genre, setGenre] = useState('');
   const [poster, setPoster] = useState('');
   const [description, setDescription] = useState('');
@@ -33,7 +34,7 @@ const Add = ({addMovie}) => {
       addMovie({
         title,
         year,
-        
+        id,
         genre,
         poster,
         description,
