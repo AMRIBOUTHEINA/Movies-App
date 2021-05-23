@@ -9,6 +9,7 @@ const Add = ({addMovie}) => {
     const handleClose = () => {
         setId('')
         setPoster('')
+        setTrailer('')
         setTitle('')
         setYear('')
         setGenre('')
@@ -17,14 +18,15 @@ const Add = ({addMovie}) => {
         setRating('')
         setShow(false)
     };
-    const handleShow = () => setShow(true);
-    
+  const handleShow = () => setShow(true);
+  
   
   const [title, setTitle] = useState('');
-  const [year, setYear] = useState('');
-  const [id, setId] = useState(uuid());
-  const [genre, setGenre] = useState('');
   const [poster, setPoster] = useState('');
+  const [trailer, setTrailer] = useState('');
+  const [id, setId] = useState(uuid());
+  const [year, setYear] = useState('');
+  const [genre, setGenre] = useState('');
   const [description, setDescription] = useState('');
   const [stars, setStars] = useState('');
   const [rating, setRating] = useState(0);
@@ -37,6 +39,7 @@ const Add = ({addMovie}) => {
         id,
         genre,
         poster,
+        trailer,
         description,
         stars,
         rating
@@ -46,7 +49,7 @@ const Add = ({addMovie}) => {
 
     return (
       <>
-          <Button style={{backgroundColor:"burlywood",fontSize:22,color:"black",marginLeft:"400px"}}  variant="primary" onClick={handleShow}>
+          <Button style={{ borderStyle:"solid" ,borderSize:"1" ,borderColor:"black" ,backgroundColor:"burlywood",fontSize:22,color:"black",marginLeft:"200px",height:"45px"}}  variant="primary" onClick={handleShow}>
         Add your movie
       </Button>
   
@@ -56,6 +59,7 @@ const Add = ({addMovie}) => {
         </Modal.Header>
         <Modal.Body style={{backgroundColor:"burlywood"}}>
           <Form.Control placeholder="poster" onChange={(e)=>setPoster(e.target.value)} style={{backgroundColor:"burlywood"}} />
+          <Form.Control placeholder="trailer" onChange={(e)=>setTrailer(e.target.value)} style={{backgroundColor:"burlywood"}} />
           <Form.Control placeholder="Title" onChange={(title)=>setTitle(title.target.value)} style={{backgroundColor:"burlywood"}} />
           <Form.Control placeholder="Year" onChange={(year)=>setYear(year.target.value)} style={{backgroundColor:"burlywood"}} />
           

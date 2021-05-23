@@ -9,11 +9,11 @@ const MovieCard = ({movie}) => (
             <Card.Img style={{height: 270}} src={movie.poster} alt=""  />
             <Card.Body>
             <Card.Title style={{color:"red",fontSize:22}}> {movie.title} </Card.Title>
-            <Card.Text style={{fontSize:14}}>{movie.year} </Card.Text>
-            <Card.Text style={{fontSize:14}}>{movie.type} </Card.Text>
-            <Card.Text style={{fontSize:14}}>{movie.genre} </Card.Text>
-            <Card.Text style={{fontSize:14}}>{movie.stars} </Card.Text>
-            <Card.Text style={{fontSize:12}}>{movie.description}<br/>  <Button style={{marginTop:12,backgroundColor:'burlywood',color:'black'}}>Save as </Button></Card.Text>
+            <Card.Text style={{fontSize:14,color:"black"}}>{movie.year} </Card.Text>
+            <Card.Text style={{fontSize:14,color:"black"}}>{movie.type} </Card.Text>
+            <Card.Text style={{fontSize:14,color:"black"}}>{movie.genre} </Card.Text>
+            <Card.Text style={{fontSize:14,color:"black" }}>{movie.stars} </Card.Text>
+            <Card.Text style={{fontSize:12,color:"black"}}>{movie.description}<br/>  <Button style={{marginTop:12,backgroundColor:'burlywood',color:'black'}}>Save as </Button></Card.Text>
             </Card.Body>
 
             <Card.Body>

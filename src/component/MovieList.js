@@ -1,13 +1,36 @@
 import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import MovieCard from './MovieCard';
+import MovieDescription from './MovieDescription';
+import '../App.css';
+const MovieList = ({ movies, id, match }) => {
+  return (
+    <div className='movie-list'>
+      {movies.map((el) => (
+        <Link to={`/movies/${el.id}`} style={{ textDecoration: 'none' }}>
+          
+          <MovieCard movie={el} />
+        </Link>
+      ))}
+      
+        <Switch>
+        <Route
+          path='/movies/:id'
+          render={({ match }) => {
+            const id = match.params.id;
+            const foundMovie = movies.find((movie) => movie.id === id);
+        
+            return (<MovieDescription movie={foundMovie} />);
+          }}
+        />
+         <Route path="/movies" render={() => {
+      return (<MovieList movies={movies}/>
+          
+      );
+    }}/>
+        </Switch> 
+    </div>
+  );
+};
 
-
-const MovieList = ({movies}) => {
-    return (
-        <div  className="deck">
-            {movies.map( el => <MovieCard movie={el}/>)}
-        </div>
-    )
-}
-
-export default MovieList
+export default MovieList;
